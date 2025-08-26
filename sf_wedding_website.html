@@ -1,0 +1,1138 @@
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            text-align: center;
+            display: none;
+        }<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridget & Dustin - San Francisco Wedding</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
+            color: #000000;
+            background: white;
+            font-weight: 300;
+        }
+
+        .hero {
+            min-height: 100vh;
+            background: white;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: center;
+            color: black;
+            position: relative;
+            padding: 150px 2rem 4rem;
+        }
+
+        .golden-gate-bridge {
+            width: 300px;
+            height: 60px;
+            margin: 0 auto 2rem;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 476 96"><defs><linearGradient id="bridgeGold" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:%23D4AF37"/><stop offset="100%" style="stop-color:%23D4AF37"/></linearGradient></defs><rect x="0" y="76" width="476" height="4" fill="url(%23bridgeGold)"/><rect x="76" y="16" width="8" height="64" fill="url(%23bridgeGold)"/><rect x="392" y="16" width="8" height="64" fill="url(%23bridgeGold)"/><rect x="68" y="16" width="24" height="20" fill="url(%23bridgeGold)"/><rect x="384" y="16" width="24" height="20" fill="url(%23bridgeGold)"/><path d="M84 36 Q140 52 238 56 Q336 52 392 36" stroke="url(%23bridgeGold)" stroke-width="3" fill="none"/><path d="M84 40 Q140 56 238 60 Q336 56 392 40" stroke="url(%23bridgeGold)" stroke-width="2" fill="none"/><g stroke="url(%23bridgeGold)" stroke-width="1" opacity="0.9"><line x1="100" y1="42" x2="100" y2="76"/><line x1="116" y1="44" x2="116" y2="76"/><line x1="132" y1="46" x2="132" y2="76"/><line x1="148" y1="48" x2="148" y2="76"/><line x1="164" y1="50" x2="164" y2="76"/><line x1="180" y1="52" x2="180" y2="76"/><line x1="196" y1="53" x2="196" y2="76"/><line x1="212" y1="54" x2="212" y2="76"/><line x1="228" y1="55" x2="228" y2="76"/><line x1="238" y1="56" x2="238" y2="76"/><line x1="248" y1="55" x2="248" y2="76"/><line x1="264" y1="54" x2="264" y2="76"/><line x1="280" y1="53" x2="280" y2="76"/><line x1="296" y1="52" x2="296" y2="76"/><line x1="312" y1="50" x2="312" y2="76"/><line x1="328" y1="48" x2="328" y2="76"/><line x1="344" y1="46" x2="344" y2="76"/><line x1="360" y1="44" x2="360" y2="76"/><line x1="376" y1="42" x2="376" y2="76"/></g></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 4rem;
+            animation: fadeInUp 1.5s ease-out;
+            border: 3px solid black;
+            border-radius: 15px;
+            background: white;
+        }
+
+        .couple-names {
+            margin-bottom: 2rem;
+        }
+
+        .bride-name {
+            font-size: 4rem;
+            font-weight: 300;
+            color: black;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: block;
+            -webkit-text-stroke: 0.5px #d4af37;
+            text-stroke: 0.5px #d4af37;
+        }
+
+        .ampersand {
+            font-size: 3rem;
+            font-weight: 300;
+            color: #d4af37;
+            font-family: 'Cormorant Garamond', serif;
+            margin-bottom: 1rem;
+            display: block;
+            -webkit-text-stroke: 0.5px #000000;
+            text-stroke: 0.5px #000000;
+        }
+
+        .groom-name {
+            font-size: 4rem;
+            font-weight: 300;
+            color: black;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            display: block;
+            -webkit-text-stroke: 0.5px #d4af37;
+            text-stroke: 0.5px #d4af37;
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: black;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            letter-spacing: 2px;
+            -webkit-text-stroke: 0.3px #d4af37;
+            text-stroke: 0.3px #d4af37;
+        }
+
+        .date-location {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: black;
+            padding: 1.5rem 2.5rem;
+            border: 2px solid black;
+            border-radius: 15px;
+            display: inline-block;
+            margin-top: 1rem;
+            background: white;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: black;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            margin: 0;
+        }
+
+        .nav li {
+            margin: 0 1rem;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+            font-weight: 400;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            -webkit-text-stroke: 0.5px #d4af37;
+            text-stroke: 0.5px #d4af37;
+        }
+
+        .nav a:hover {
+            color: #d4af37;
+        }
+
+        .section {
+            padding: 4rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            background: white;
+        }
+
+        .section h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #000000;
+            font-weight: 400;
+            font-family: 'Cormorant Garamond', serif;
+            position: relative;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section h2:after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background: #d4af37;
+            display: block;
+            margin: 1rem auto;
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.3rem;
+            line-height: 2;
+            color: #000000;
+            font-weight: 300;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        .event-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .event-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 2px solid #000000;
+            text-align: center;
+            transition: transform 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .custom-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            border: 3px solid #000000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            background: white;
+            position: relative;
+        }
+
+        .custom-icon::after {
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border: 2px solid #d4af37;
+            border-radius: 50%;
+            content: '';
+            z-index: -1;
+        }
+
+        .event-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #000000;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .rsvp-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border: 2px solid #000000;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #000000;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d4af37;
+        }
+
+        .food-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .food-option {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .food-option:hover {
+            border-color: #d4af37;
+            background: #fff;
+        }
+
+        .food-option.selected {
+            border-color: #d4af37;
+            background: #d4af37;
+            color: white;
+        }
+
+        .food-option input[type="radio"] {
+            display: none;
+        }
+
+        .food-option label {
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .submit-btn {
+            background: #d4af37;
+            color: white;
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            background: #c19a3a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .registry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .registry-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 2px solid #000000;
+            transition: transform 0.3s ease;
+        }
+
+        .registry-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .registry-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .registry-card-content {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .registry-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #000000;
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+
+        .registry-btn {
+            background: #d4af37;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .registry-btn:hover {
+            background: #c19a3a;
+            transform: translateY(-2px);
+        }
+
+        .admin-panel {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 2000;
+        }
+
+        .admin-toggle {
+            background: #d4af37;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            width: 50px;
+            height: 50px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .admin-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 3000;
+        }
+
+        .admin-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 90%;
+            max-height: 80%;
+            overflow-y: auto;
+            border: 2px solid #000000;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 1rem;
+        }
+
+        .close-admin {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #000000;
+        }
+
+        .rsvp-summary {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #000000;
+        }
+
+        .rsvp-entry {
+            background: white;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .export-btn {
+            background: #d4af37;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-right: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 120px 1rem 3rem;
+            }
+
+            .hero-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .golden-gate-bridge {
+                width: 250px;
+                height: 50px;
+                margin-bottom: 1.5rem;
+            }
+
+            .bride-name, .groom-name {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+
+            .ampersand {
+                font-size: 2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.3rem;
+                letter-spacing: 1px;
+            }
+
+            .date-location {
+                font-size: 1rem;
+                padding: 1rem 1.5rem;
+                letter-spacing: 0.5px;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+
+            .story-content {
+                font-size: 1.1rem;
+                line-height: 1.8;
+                letter-spacing: 0.3px;
+            }
+            
+            .nav {
+                padding: 0.5rem 0;
+            }
+
+            .nav ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+                padding: 0.8rem 0;
+            }
+            
+            .nav li {
+                margin: 0.3rem 0.5rem;
+            }
+
+            .nav a {
+                font-size: 0.8rem;
+                letter-spacing: 0.3px;
+            }
+            
+            .event-details {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .event-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .event-card h3 {
+                font-size: 1.5rem;
+                letter-spacing: 0.5px;
+            }
+
+            .custom-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .rsvp-form {
+                padding: 2rem 1.5rem;
+                margin: 0 1rem;
+            }
+
+            .form-group label {
+                font-size: 0.8rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 1rem;
+            }
+            
+            .food-options {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .food-option {
+                padding: 1rem;
+            }
+
+            .submit-btn {
+                font-size: 1rem;
+                padding: 0.8rem 2rem;
+            }
+            
+            .registry-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .registry-card {
+                margin: 0 1rem;
+            }
+
+            .registry-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .registry-btn {
+                font-size: 0.9rem;
+                padding: 0.7rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 100px 0.5rem 2rem;
+            }
+
+            .hero-content {
+                padding: 1.5rem 1rem;
+            }
+
+            .golden-gate-bridge {
+                width: 200px;
+                height: 40px;
+            }
+
+            .bride-name, .groom-name {
+                font-size: 2rem;
+                letter-spacing: 1px;
+            }
+
+            .ampersand {
+                font-size: 1.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.1rem;
+            }
+
+            .date-location {
+                font-size: 0.9rem;
+                padding: 0.8rem 1rem;
+            }
+
+            .nav a {
+                font-size: 0.7rem;
+                letter-spacing: 0.2px;
+            }
+
+            .section h2 {
+                font-size: 1.8rem;
+                letter-spacing: 1px;
+            }
+
+            .story-content {
+                font-size: 1rem;
+                line-height: 1.7;
+            }
+
+            .event-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .custom-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+
+            .rsvp-form {
+                padding: 1.5rem 1rem;
+                margin: 0 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#details">Wedding Details</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+            <li><a href="#registry">Registry</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="golden-gate-bridge"></div>
+            <div class="couple-names">
+                <span class="bride-name">Bridget</span>
+                <span class="ampersand">&</span>
+                <span class="groom-name">Dustin</span>
+            </div>
+            <h2>are getting married</h2>
+            <div class="date-location">
+                <span style="color: red; font-size: 1.3rem; margin-right: 0.5rem;">♥</span> October 10-11, 2025
+                <br>
+                <span style="color: red; font-size: 1.3rem; margin-right: 0.5rem;">♥</span> San Francisco, California
+            </div>
+        </div>
+    </section>
+
+    <section id="story" class="section">
+        <h2>Our Story</h2>
+        <div class="story-content">
+            <p>Bridget and Dustin first met at a coffee shop in North Beach on a foggy San Francisco morning in 2021. What started as a chance encounter over spilled coffee has blossomed into a beautiful love story that has taken them through the winding streets of their beloved city.</p>
+            <br>
+            <p>From sunset walks along the Golden Gate Bridge to cozy evenings in their Mission District apartment, they've built a life filled with laughter, adventure, and endless love. Now, surrounded by the Victorian charm and golden hills of San Francisco, they're ready to say "I do" and begin their next chapter together.</p>
+        </div>
+    </section>
+
+    <section id="details" class="section">
+        <h2>Wedding Details</h2>
+        <div class="event-details">
+            <div class="event-card">
+                <div class="custom-icon">🚢</div>
+                <h3>The Night Before</h3>
+                <p><strong>October 10, 7:00 PM</strong></p>
+                <p>California Hornblower<br>
+                Pier 3, The Embarcadero<br>
+                San Francisco, CA 94111</p>
+            </div>
+            <div class="event-card">
+                <div class="custom-icon">🚋</div>
+                <h3>Ceremony</h3>
+                <p><strong>October 11, 5:00 PM</strong></p>
+                <p>The Penthouse at The Fairmont<br>
+                950 Mason St<br>
+                San Francisco, CA 94108</p>
+            </div>
+            <div class="event-card">
+                <div class="custom-icon">🥂</div>
+                <h3>Reception</h3>
+                <p><strong>Following Ceremony</strong></p>
+                <p>The Penthouse at The Fairmont<br>
+                950 Mason St<br>
+                San Francisco, CA 94108</p>
+            </div>
+            <div class="event-card">
+                <div class="custom-icon">🤵</div>
+                <h3>Dress Code</h3>
+                <p><strong>Formal Attire</strong></p>
+                <p>We encourage elegant evening wear. Ladies may want to bring a wrap for the San Francisco evening breeze!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp" class="section">
+        <h2>RSVP</h2>
+        <div class="rsvp-form">
+            <div class="success-message" id="successMessage">
+                Thank you for your RSVP! We can't wait to celebrate with you.
+            </div>
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label for="guestName">Full Name *</label>
+                    <input type="text" id="guestName" name="guestName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="guestCount">Number of Guests (including yourself) *</label>
+                    <select id="guestCount" name="guestCount" required>
+                        <option value="">Please select</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </div>
+                
+                <!-- The Night Before Section -->
+                <div class="form-group">
+                    <h3 style="color: #000000; margin-bottom: 1rem; border-bottom: 2px solid #d4af37; padding-bottom: 0.5rem;">The Night Before (October 10)</h3>
+                    <label for="nightBeforeAttending">Will you attend "The Night Before"?</label>
+                    <select id="nightBeforeAttending" name="nightBeforeAttending">
+                        <option value="yes">Yes, I'll be there!</option>
+                        <option value="no">No, I cannot attend</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="nightBeforeFoodGroup">
+                    <label>"The Night Before" Meal Preference *</label>
+                    <div class="food-options">
+                        <div class="food-option" data-value="night-beef" data-group="nightbefore">
+                            <input type="radio" name="nightBeforeMealPreference" value="beef" id="night-beef">
+                            <div>
+                                <i class="fas fa-drumstick-bite"></i><br>
+                                Beef
+                            </div>
+                        </div>
+                        <div class="food-option" data-value="night-chicken" data-group="nightbefore">
+                            <input type="radio" name="nightBeforeMealPreference" value="chicken" id="night-chicken">
+                            <div>
+                                <i class="fas fa-drumstick-bite"></i><br>
+                                Chicken
+                            </div>
+                        </div>
+                        <div class="food-option" data-value="night-veggie" data-group="nightbefore">
+                            <input type="radio" name="nightBeforeMealPreference" value="vegetarian" id="night-vegetarian">
+                            <div>
+                                <i class="fas fa-leaf"></i><br>
+                                Vegetarian
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Wedding Day Section -->
+                <div class="form-group">
+                    <h3 style="color: #000000; margin-bottom: 1rem; border-bottom: 2px solid #d4af37; padding-bottom: 0.5rem;">Wedding Day (October 11)</h3>
+                    <label for="weddingAttending">Will you attend the Wedding?</label>
+                    <select id="weddingAttending" name="weddingAttending">
+                        <option value="yes">Yes, I'll be there!</option>
+                        <option value="no">No, I cannot attend</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="weddingFoodGroup">
+                    <label>Wedding Reception Meal Preference *</label>
+                    <div class="food-options">
+                        <div class="food-option" data-value="wedding-beef" data-group="wedding">
+                            <input type="radio" name="weddingMealPreference" value="beef" id="wedding-beef">
+                            <div>
+                                <i class="fas fa-drumstick-bite"></i><br>
+                                Beef
+                            </div>
+                        </div>
+                        <div class="food-option" data-value="wedding-chicken" data-group="wedding">
+                            <input type="radio" name="weddingMealPreference" value="chicken" id="wedding-chicken">
+                            <div>
+                                <i class="fas fa-drumstick-bite"></i><br>
+                                Chicken
+                            </div>
+                        </div>
+                        <div class="food-option" data-value="wedding-veggie" data-group="wedding">
+                            <input type="radio" name="weddingMealPreference" value="vegetation" id="wedding-vegetation">
+                            <div>
+                                <i class="fas fa-leaf"></i><br>
+                                Vegetation
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dietary">Dietary Restrictions or Allergies</label>
+                    <textarea id="dietary" name="dietary" rows="3" placeholder="Please let us know about any dietary restrictions or allergies"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Special Message (Optional)</label>
+                    <textarea id="message" name="message" rows="3" placeholder="Share your excitement or any special message for the happy couple!"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-heart"></i> Submit RSVP
+                </button>
+            </form>
+        </div>
+        
+        <div class="rsvp-list">
+            <h3 style="text-align: center; margin-bottom: 1rem; color: #2c3e50;">Guest Responses</h3>
+            <div id="rsvpResponses">
+                <div class="rsvp-item">
+                    <div>
+                        <strong>Emma Johnson</strong><br>
+                        <small>Attending • Salmon • No dietary restrictions</small>
+                    </div>
+                    <span style="color: #28a745;"><i class="fas fa-check-circle"></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="registry" class="section">
+        <h2>Wedding Registry</h2>
+        <p style="text-align: center; font-size: 1.2rem; color: #555; margin-bottom: 3rem;">
+            Your presence is the greatest gift, but if you'd like to celebrate with us, we've registered at these wonderful stores:
+        </p>
+        <div class="registry-grid">
+            <div class="registry-card">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'><rect fill='%23ff9900' width='400' height='200'/><text x='200' y='110' text-anchor='middle' fill='white' font-size='32' font-weight='bold'>Amazon</text></svg>" alt="Amazon Registry">
+                <div class="registry-card-content">
+                    <h3>Amazon</h3>
+                    <p>For all the essentials to start our new home together</p>
+                    <a href="#" class="registry-btn" onclick="openRegistry('amazon')">
+                        <i class="fas fa-gift"></i> View Registry
+                    </a>
+                </div>
+            </div>
+            
+            <div class="registry-card">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'><rect fill='%23cc0000' width='400' height='200'/><circle fill='white' cx='150' cy='100' r='40'/><circle fill='white' cx='250' cy='100' r='40'/></svg>" alt="Target Registry">
+                <div class="registry-card-content">
+                    <h3>Target</h3>
+                    <p>Home decor and everyday items we love</p>
+                    <a href="#" class="registry-btn" onclick="openRegistry('target')">
+                        <i class="fas fa-gift"></i> View Registry
+                    </a>
+                </div>
+            </div>
+            
+            <div class="registry-card">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'><rect fill='%232e5c8a' width='400' height='200'/><text x='200' y='110' text-anchor='middle' fill='white' font-size='24' font-weight='bold'>Williams Sonoma</text></svg>" alt="Williams Sonoma Registry">
+                <div class="registry-card-content">
+                    <h3>Williams Sonoma</h3>
+                    <p>Beautiful kitchenware for our culinary adventures</p>
+                    <a href="#" class="registry-btn" onclick="openRegistry('williams-sonoma')">
+                        <i class="fas fa-gift"></i> View Registry
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Panel for RSVP Management -->
+    <div class="admin-panel">
+        <button class="admin-toggle" onclick="toggleAdmin()" title="Admin Panel">⚙️</button>
+    </div>
+
+    <div id="adminModal" class="admin-modal">
+        <div class="admin-content">
+            <div class="admin-header">
+                <h2 style="color: #000000; font-family: 'Cormorant Garamond', serif;">RSVP Admin Panel</h2>
+                <button class="close-admin" onclick="toggleAdmin()">×</button>
+            </div>
+            
+            <div class="rsvp-summary">
+                <h3 style="color: #000000; margin-bottom: 1rem;">Summary</h3>
+                <div id="rsvpSummary">
+                    <p><strong>Total Responses:</strong> <span id="totalResponses">0</span></p>
+                    <p><strong>Night Before Attending:</strong> <span id="nightBeforeCount">0</span></p>
+                    <p><strong>Wedding Attending:</strong> <span id="weddingCount">0</span></p>
+                    <p><strong>Total Guests:</strong> <span id="totalGuests">0</span></p>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+                <button class="export-btn" onclick="exportToCSV()">Export to CSV</button>
+                <button class="export-btn" onclick="exportToJSON()">Export to JSON</button>
+                <button class="export-btn" onclick="clearAllData()" style="background: #dc3545;">Clear All Data</button>
+            </div>
+
+            <div id="rsvpList" style="max-height: 400px; overflow-y: auto;">
+                <!-- RSVP entries will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize with empty data array (stored privately for couple's use)
+        let rsvpData = [];
+
+        // Food option selection
+        document.querySelectorAll('.food-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Get the group this option belongs to
+                const group = this.getAttribute('data-group');
+                
+                if (group) {
+                    // Only deselect options from the same group
+                    document.querySelectorAll(`.food-option[data-group="${group}"]`).forEach(opt => opt.classList.remove('selected'));
+                } else {
+                    // For backward compatibility with ungrouped options
+                    document.querySelectorAll('.food-option:not([data-group])').forEach(opt => opt.classList.remove('selected'));
+                }
+                
+                this.classList.add('selected');
+                this.querySelector('input[type="radio"]').checked = true;
+            });
+        });
+
+        // Night Before attendance handler
+        document.getElementById('nightBeforeAttending').addEventListener('change', function() {
+            const nightBeforeFoodGroup = document.getElementById('nightBeforeFoodGroup');
+            
+            if (this.value === 'yes') {
+                nightBeforeFoodGroup.style.display = 'block';
+            } else {
+                nightBeforeFoodGroup.style.display = 'none';
+            }
+        });
+
+        // Wedding attendance handler
+        document.getElementById('weddingAttending').addEventListener('change', function() {
+            const weddingFoodGroup = document.getElementById('weddingFoodGroup');
+            
+            if (this.value === 'yes') {
+                weddingFoodGroup.style.display = 'block';
+            } else {
+                weddingFoodGroup.style.display = 'none';
+            }
+        });
+
+        // Form submission
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const nightBeforeAttending = formData.get('nightBeforeAttending');
+            const weddingAttending = formData.get('weddingAttending');
+            
+            // Check if attending at least one event
+            if (nightBeforeAttending === 'no' && weddingAttending === 'no') {
+                alert('Please select to attend at least one event.');
+                return;
+            }
+            
+            // Validation for night before
+            if (nightBeforeAttending === 'yes') {
+                const nightBeforeMeal = formData.get('nightBeforeMealPreference');
+                if (!nightBeforeMeal) {
+                    alert('Please select a meal preference for "The Night Before".');
+                    return;
+                }
+            }
+            
+            // Validation for wedding
+            if (weddingAttending === 'yes') {
+                const weddingMeal = formData.get('weddingMealPreference');
+                if (!weddingMeal) {
+                    alert('Please select a meal preference for the wedding reception.');
+                    return;
+                }
+            }
+            
+            const rsvpEntry = {
+                name: formData.get('guestName'),
+                email: formData.get('email'),
+                guests: formData.get('guestCount'),
+                nightBeforeAttending: nightBeforeAttending,
+                nightBeforeMeal: formData.get('nightBeforeMealPreference') || '',
+                weddingAttending: weddingAttending,
+                weddingMeal: formData.get('weddingMealPreference') || '',
+                dietary: formData.get('dietary') || '',
+                message: formData.get('message') || ''
+            };
+
+            // Add to RSVP data (stored privately)
+            rsvpData.push(rsvpEntry);
+            
+            // Show success message
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Reset form
+            this.reset();
+            document.querySelectorAll('.food-option').forEach(opt => opt.classList.remove('selected'));
+            document.getElementById('nightBeforeFoodGroup').style.display = 'none';
+            document.getElementById('weddingFoodGroup').style.display = 'none';
+            
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+        });
+
+
+
+        // Registry links
+        function openRegistry(store) {
+            const registryUrls = {
+                'amazon': 'https://amazon.com/wedding/registry',
+                'target': 'https://target.com/gift-registry',
+                'williams-sonoma': 'https://williams-sonoma.com/registry'
+            };
+            
+            alert(`Opening ${store} registry! In a real website, this would link to: ${registryUrls[store]}`);
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Initialize - no guest responses displayed publicly
+    </script>
+</body>
+</html>
